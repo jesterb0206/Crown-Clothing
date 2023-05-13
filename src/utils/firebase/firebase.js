@@ -56,7 +56,10 @@ export const createUserDocumentFromAuth = async (
         ...additionalInformation,
       });
     } catch (error) {
-      console.log('An error creating the user occurred!', error.message);
+      console.log(
+        'An error creating the user account occurred!',
+        error.message
+      );
     }
   }
 

@@ -2,9 +2,8 @@ import {useState} from 'react';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
+  signInWithGooglePopup,
 } from '../../utils/firebase/firebase';
 import './sign-in-form.styles.scss';
 
@@ -17,28 +16,23 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const {email, password} = formFields;
 
-  console.log(formFields);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
-    const {user} = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-      console.log(response);
+      await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
-    } catch (error) {}
+    } catch (error) {
+      console.log('Unable to sign in!', error);
+    }
   };
 
   const handleChange = (event) => {
@@ -48,7 +42,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div className='sign-up-container'>
+    <div className='sign-in-container'>
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -59,8 +53,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name='email'
           value={email}
-        ></FormInput>
-
+        />
         <FormInput
           label='Password'
           type='password'
@@ -68,11 +61,11 @@ const SignInForm = () => {
           onChange={handleChange}
           name='password'
           value={password}
-        ></FormInput>
+        />
         <div className='buttons-container'>
-          <Button type='submit'>Sign Ip</Button>
-          <Button buttonType='google' onClick={signInWithGoogle}>
-            Google Sign In
+          <Button type='submit'>Sign In</Button>
+          <Button buttonType='google' type='button' onClick={signInWithGoogle}>
+            Sign In With Google
           </Button>
         </div>
       </form>
