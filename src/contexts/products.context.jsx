@@ -1,13 +1,13 @@
+/* eslint-disable no-unused-vars */
 import {createContext, useState} from 'react';
-import PRODUCTS from '../shop-data.json';
+import SHOP_DATA from '../shop-data.js';
 
 export const ProductsContext = createContext({
   products: [],
 });
 
 export const ProductsProvider = ({children}) => {
-  // eslint-disable-next-line no-unused-vars
-  const [products, setProducts] = useState(PRODUCTS);
+  const [products, setProducts] = useState([]);
   const value = {products};
 
   return (
