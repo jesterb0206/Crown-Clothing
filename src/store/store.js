@@ -8,7 +8,8 @@ const middleWares = [process.env.NODE_ENV === 'development' && logger].filter(
 
 export const store = configureStore({
   reducer: rootReducer,
-  // middleware: middleWares,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleWares),
 });
 
 // import {compose, createStore, applyMiddleware} from 'redux';
