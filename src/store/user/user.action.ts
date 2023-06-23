@@ -5,7 +5,6 @@ import {
   ActionWithPayload,
   withMatcher,
 } from '../../utils/reducer/reducer.utils';
-
 import {
   UserData,
   AdditionalInformation,
