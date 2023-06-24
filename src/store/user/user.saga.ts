@@ -83,6 +83,7 @@ export function* isUserAuthenticated() {
 }
 
 export function* signUp({
+  // @ts-ignore
   payload: {email, password, displayName},
 }: SignUpStart) {
   try {
