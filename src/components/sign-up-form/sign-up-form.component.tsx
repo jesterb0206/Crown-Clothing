@@ -1,9 +1,10 @@
-import {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import { useState, FormEvent, ChangeEvent } from 'react';
+import { AuthError, AuthErrorCodes } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
-import {SignUpContainer} from './sign-up-form.styles';
-import {signUpStart} from '../../store/user/user.action';
+import { SignUpContainer } from './sign-up-form.styles';
+import { signUpStart } from '../../store/user/user.action';
 
 const defaultFormFields = {
   displayName: '',
@@ -14,14 +15,14 @@ const defaultFormFields = {
 
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const {displayName, email, password, confirmPassword} = formFields;
+  const { displayName, email, password, confirmPassword } = formFields;
   const dispatch = useDispatch();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -33,7 +34,7 @@ const SignUpForm = () => {
       dispatch(signUpStart(email, password, displayName));
       resetFormFields();
     } catch (error) {
-      if (error.code === 'auth/email-already-in-use') {
+      if ((error as AuthError).code === AuthErrorCodes.EMAIL_EXISTS) {
         alert('Cannot create user, email already in use!');
       } else {
         console.log('Encountered an error during user creation!', error);
@@ -41,10 +42,10 @@ const SignUpForm = () => {
     }
   };
 
-  const handleChange = (event) => {
-    const {name, value} = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
 
-    setFormFields({...formFields, [name]: value});
+    setFormFields({ ...formFields, [name]: value });
   };
 
   return (
@@ -60,7 +61,6 @@ const SignUpForm = () => {
           name='displayName'
           value={displayName}
         />
-
         <FormInput
           label='Email'
           type='email'
@@ -69,7 +69,6 @@ const SignUpForm = () => {
           name='email'
           value={email}
         />
-
         <FormInput
           label='Password'
           type='password'
@@ -78,7 +77,6 @@ const SignUpForm = () => {
           name='password'
           value={password}
         />
-
         <FormInput
           label='Confirm Password'
           type='password'
