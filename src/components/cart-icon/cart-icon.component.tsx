@@ -1,3 +1,4 @@
+/// <reference types="react-scripts" />
 import {useDispatch, useSelector} from 'react-redux';
 import {
   selectCartCount,
