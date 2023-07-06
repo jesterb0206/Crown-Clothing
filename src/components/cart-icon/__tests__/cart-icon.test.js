@@ -1,6 +1,7 @@
 import {screen} from '@testing-library/react';
 import CartIcon from '../cart-icon.component';
 import {renderWithProviders} from '../../../utils/test-utils';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('Cart Icon Tests', () => {
   test('Uses Preloaded State to Render', () => {
