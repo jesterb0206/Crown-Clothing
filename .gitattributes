@@ -1,4 +1,7 @@
 *.md linguist-detectable=true
+*.md linguist-documentation=false
+*.md linguist-language=Markdown
 *.json linguist-detectable=true
 *.scss linguist-detectable=true
 *.svg linguist-detectable=true
+*.tsx linguist-detectable=true
