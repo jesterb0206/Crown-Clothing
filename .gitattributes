@@ -1,4 +1,4 @@
-*.md linguist-detectable -linguist-documentation
+*.md linguist-detectable=true
 *.json linguist-detectable=true
 *.scss linguist-detectable=true
 *.svg linguist-detectable=true
