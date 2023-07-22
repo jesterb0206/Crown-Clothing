@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'BNRigidly';
+  src: local('BNRigidly'), url('../../Fonts/BNRigidly.otf');
+}
+
+body {
+  background: linear-gradient(
+    to right,
+    #000000 0%,
+    #000000 50%,
+    #ff0000 50%,
+    #ff0000 100%
+  );
+  overflow: hidden;
+}
+
+h2 {
+  font-family: BNRigidly;
+  font-size: 180px;
+  letter-spacing: 5px;
+}
+
+.left {
+  color: #ffff00;
+  left: 8%;
+  position: absolute;
+  top: 5%;
+}
+
+.right {
+  bottom: 5%;
+  color: #ffffff;
+  position: absolute;
+  right: 4.5%;
+}
+
+#ImageOne {
+  left: -195px;
+  position: absolute;
+  top: -500px;
+}
+
+#ImageTwo {
+  left: 800px;
+  position: absolute;
+  top: -500px;
+}
