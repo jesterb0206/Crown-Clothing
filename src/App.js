@@ -14,7 +14,6 @@ const Home = lazy(() => import('./routes/home/home.component'));
 const Authentication = lazy(() =>
   import('./routes/authentication/authentication.component')
 );
-const NewHome = lazy(() => import('./routes/new-home/new-home.component'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,7 +32,6 @@ const App = () => {
           <Route path='auth' element={<Authentication />} />
           <Route path='checkout' element={<Checkout />} />
         </Route>
-        <Route path='home' element={<NewHome />} />
       </Routes>
     </Suspense>
   );
