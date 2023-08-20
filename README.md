@@ -11,7 +11,55 @@
 
 <br>
 
+## Deployment Link
+
+<br>
+
+[Crown Clothing](https://graceful-cassata-ef7ed4.netlify.app/)
+
+<br>
+
+**☝🏻 Click here!**
+
+<br>
+
+## Table of Contents
+
+<br>
+
+- [Crown Clothing](#crown-clothing)
+  - [License](#license)
+  - [Deployment Link](#deployment-link)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Badges](#badges)
+  - [Questions](#questions)
+    - [GitHub](#github)
+    - [Email](#email)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+<br>
+
 ## Description
+
+<br>
+
+Crown Clothing is an e-commerce web application similar to Shopify (that you guessed it, is a mock clothing retailer). In addition, it's a full stack (MERN) Progressive Web Application that uses Firebase authentication and handles online payments with the Stripe API. While building this application I furthered my knowledge about React, Redux, Jest testing, and working with the Stripe API while also learning about Google's Firebase, Styled Components, etc. Overall, I had a blast learning about the latest features in React and different state management and I hope you enjoy Crown Clothing as much as I did when building it!
+
+<br>
+
+## Installation
+
+<br>
+
+Clone the repository to your local machine, open your terminal, and navigate to the root folder in the **Crown Clothing** repository. To install the necessary dependencies, run `npm i` in your command-line terminal.
+
+<br>
+
+## Usage
 
 <br>
 
@@ -64,14 +112,6 @@
 <br>
 
 ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
-
-<br>
-
-![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
-
-<br>
-
-☝🏻 **SCSS Reference Files Folder**
 
 <br>
 
